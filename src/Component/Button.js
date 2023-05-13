@@ -146,10 +146,10 @@ function CALCULATOR({ data }) {
             r.style.setProperty('--brdr-color', e.target.value);
         }, false);
 
-        operatorColor.select();
-        numberColor.select();
+        shadowColor.select();
         functionColor.select();
-        shadowColor.select()
+        numberColor.select();
+        operatorColor.select();
     }
     return (
         <>
