@@ -22,6 +22,12 @@ body {
   position: relative;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
+  #root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .main_wrapper {
     display: flex;
     flex-wrap: wrap;
