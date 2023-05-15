@@ -25,19 +25,28 @@ body {
   .main_wrapper {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
-  
+
+  @media  screen and (max-width: 700px) {
+    .main_wrapper {
+      flex-direction: column;
+    }
+  }
   .color_picker {
     margin-top: 5px;
-    width: fit-content;
+    width: 300px;
     flex-wrap: wrap;
     font-family: sans-serif;
     font-size: 14px;
     display: flex;
+    justify-content: center;
     gap: 4px;
+
     .input_wrapper {
       border: 1px solid chartreuse;
-      background-color: indigo;
+      background-color: rgb(75, 0, 130, 0.5);
       transform: rotate3d(45deg);
       padding:  5px;
       color: white;
@@ -52,12 +61,8 @@ body {
       -moz-border-radius: 4px;
       -ms-border-radius: 4px;
       -o-border-radius: 4px;
-      -webkit-transform: rotate3d(45deg);
-      -moz-transform: rotate3d(45deg);
-      -ms-transform: rotate3d(45deg);
-      -o-transform: rotate3d(45deg);
-      input: 
-{
+        
+      input{
         border: 1px solid blueviolet;
         margin: 0;
         padding: 0;
@@ -76,11 +81,7 @@ body {
     position: absolute;
     z-index: -1;
     background-color: var(--sidebtn);
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-  }
+}
   .calculator::after {
     content: "";
     top: 28%;
@@ -93,11 +94,7 @@ body {
     position: absolute;
     z-index: -1;
     background-color: var(--sidebtn);
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-  }
+}
   .calculator {
     position: relative;
     background-color: var(--b-color);
@@ -201,5 +198,25 @@ body {
         background-color: var(--o-color);
       }
   }
+}
+@media  screen and (max-width: 700px) {
+  .color_picker {
+    width: 400px;
+  }
+  .calculator::after, .calculator::before, .display::after, .display::before {
+    display: none;
+  }
+  .calculator {
+    border-radius: 0;
+    width: 100%;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    .key_frame {
+      width: 100%;
+    }
+}
 }
 }
