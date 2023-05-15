@@ -172,7 +172,6 @@ function CALCULATOR({ data }) {
                         <label>Shadow Color</label>
                     </div>
                 </div>
-                
                 <div className="calculator">
                     <Display style={{ fontSize: size }} value={value} />
                     <hr color="springgreen" />
