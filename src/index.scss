@@ -199,6 +199,8 @@ body {
 }
 @media  screen and (max-width: 700px) {
   .main_wrapper {
+    width: 100%;
+    padding: 0;
     flex-direction: column;
   }
   .color_picker {
@@ -211,7 +213,7 @@ body {
     border-radius: 0;
     width: 100%;
     margin-bottom: 10px;
-    border: none;
+    border: 0px;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
@@ -220,13 +222,13 @@ body {
       height: 180px;
     }
     .key_frame {
-        justify-content: space-evenly;
+        width: 100%;
+        justify-content: space-around;
         align-items: center;
-        gap: 15px;
-
+        gap: 10px;
         .btn {
-          width: 60px;
-          height: 60px;
+          width: 65px;
+          height: 65px;
         }
         .zero {
           width: 100%;
