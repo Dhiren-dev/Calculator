@@ -153,29 +153,31 @@ function CALCULATOR({ data }) {
     }
     return (
         <>
-            <div className="color_picker">
-                <div className="input_wrapper">
-                    <input id="operator" type="color"></input>
-                    <label>Operator Color</label>
+            <div className="main_wrapper">
+                <div className="color_picker">
+                    <div className="input_wrapper">
+                        <input id="operator" type="color"></input>
+                        <label>Operator Color</label>
+                    </div>
+                    <div className="input_wrapper">
+                        <input id="number" type="color"></input>
+                        <label>Number Color</label>
+                    </div>
+                    <div className="input_wrapper">
+                        <input id="function" type="color"></input>
+                        <label>Function Color</label>
+                    </div>
+                    <div className="input_wrapper">
+                        <input id="shadow" type="color"></input>
+                        <label>Shadow Color</label>
+                    </div>
                 </div>
-                <div className="input_wrapper">
-                    <input id="number" type="color"></input>
-                    <label>Number Color</label>
+                
+                <div className="calculator">
+                    <Display style={{ fontSize: size }} value={value} />
+                    <hr color="springgreen" />
+                    <CalculatorKeys setFontSize={setFontSize} value={value} onUpdateValue={updateValue} keys={data} />
                 </div>
-                <div className="input_wrapper">
-                    <input id="function" type="color"></input>
-                    <label>Function Color</label>
-                </div>
-                <div className="input_wrapper">
-                    <input id="shadow" type="color"></input>
-                    <label>Shadow Color</label>
-                </div>
-            </div>
-            
-            <div className="calculator">
-                <Display style={{ fontSize: size }} value={value} />
-                <hr color="springgreen" />
-                <CalculatorKeys setFontSize={setFontSize} value={value} onUpdateValue={updateValue} keys={data} />
             </div>
         </>
     )

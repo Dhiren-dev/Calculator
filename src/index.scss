@@ -21,9 +21,13 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: grid;
   justify-content: center;
+
+  .main_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
   .color_picker {
-    position: absolute;
-    right: 10px;
     margin-top: 5px;
     width: 400px;
     flex-wrap: wrap;
