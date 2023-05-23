@@ -219,7 +219,7 @@ body {
       flex-direction: column;
       justify-content: space-evenly;
       margin: 0;
-      padding: 0;
+      padding: 10px 15px;
       border-radius: 0;
       width: 100%;
       height: 100%;
@@ -240,8 +240,9 @@ body {
         gap: 10px;
         margin: 0;
         .btn {
-          width: 75px;
-          height: 75px;
+          width: 85px;
+          font-size: 2.8rem;
+          height: 85px;
         }
         .zero {
           width: 100%;
