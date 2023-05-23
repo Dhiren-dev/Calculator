@@ -197,14 +197,14 @@ body {
       }
   }
 }
-@media  screen and (max-width: 700px) {
+@media  screen and (max-width: 600px) {
   .main_wrapper {
     width: 100%;
     padding: 0;
     flex-direction: column;
   }
   .color_picker {
-    width: 400px;
+    display: none;
   }
   .calculator::after, .calculator::before, .display::after, .display::before {
     display: none;
