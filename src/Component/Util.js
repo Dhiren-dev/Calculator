@@ -7,7 +7,6 @@ const addValue = (e, initValue, setter, updateArr, setFontSize) => {
     } else (
         setter(initValue + e.target.value)
     )
-
     return;
 }
 const allClear = (e, initValue, setter, updateArr, setFontSize) => {
@@ -91,4 +90,4 @@ const forConvert = (e, initValue, setter, updateArr, setFontSize) => {
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export { addValue , allClear, forConvert}
+export { addValue, allClear, forConvert }
