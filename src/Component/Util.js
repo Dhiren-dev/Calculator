@@ -1,3 +1,31 @@
+const multiply = '×', divide = '÷', add = '+', sub = '-', modulus = "%";
+
+const Operation = (Array, Operator) => {
+    let i = 0;
+    for (i; i < Array.length; i++) {
+        let prefix, suffix, newValue;
+        if (Array[i] === Operator) {
+            prefix = Array.slice(i - 1, i - 0)[0];
+            suffix = Array.slice(i + 1, i + 2)[0];
+            if (Operator === (multiply || divide) && suffix === undefined) { suffix = 1; }
+            if (Operator === (add || sub) && suffix === undefined) { suffix = 0 };
+            if (Operator === modulus) { suffix = 100 }
+            newValue = () => {
+                (Operator === add) ? newValue = parseFloat(prefix) + parseFloat(suffix) :
+                    (Operator === sub) ? newValue = parseFloat(prefix) - parseFloat(suffix) :
+                        (Operator === multiply) ? newValue = parseFloat(prefix) * parseFloat(suffix) :
+                            (Operator === divide) ? newValue = parseFloat(prefix) / parseFloat(suffix) :
+                                (Operator === modulus) ? newValue = parseFloat(prefix) / parseFloat(suffix) :
+                                    alert("Cannot find the operator for calculating!");
+                return newValue;
+            }
+
+            Array.splice(i - 1, 3, newValue());
+        }
+    }
+}
+
+
 const addValue = (e, initValue, setter, updateArr, setFontSize) => {
     (initValue.length >= 8) ? setFontSize("35px") : setFontSize("50px");
     if (e.target.name === "operator" && initValue === 0) {
@@ -15,8 +43,6 @@ const allClear = (e, initValue, setter, updateArr, setFontSize) => {
 }
 const forConvert = (e, initValue, setter, updateArr, setFontSize) => {
     const newArr = [];
-    const multiply = '×', divide = '÷', add = '+', sub = '-', modulus = "%";
-    /// function for new array with proper speration
     const Arr = Array.from(initValue).reduce((previousVal, currentVal) => {
         if (['+', '-', '÷', "%", "×"].includes(currentVal)) {
             newArr.push(previousVal)
@@ -29,31 +55,6 @@ const forConvert = (e, initValue, setter, updateArr, setFontSize) => {
     }, "")
     if (Arr !== "") {
         newArr.push(Arr);
-    }
-
-    const Operation = (Array, Operator) => {
-        let i = 0;
-        for (i; i < Array.length; i++) {
-            let prefix, suffix, newValue;
-            if (Array[i] === Operator) {
-                prefix = Array.slice(i - 1, i - 0)[0];
-                suffix = Array.slice(i + 1, i + 2)[0];
-                if (Operator === (multiply || divide) && suffix === undefined) { suffix = 1; }
-                if (Operator === (add || sub) && suffix === undefined) { suffix = 0 };
-                if (Operator === modulus) { suffix = 100 }
-                newValue = () => {
-                    (Operator === add) ? newValue = parseFloat(prefix) + parseFloat(suffix) :
-                        (Operator === sub) ? newValue = parseFloat(prefix) - parseFloat(suffix) :
-                            (Operator === multiply) ? newValue = parseFloat(prefix) * parseFloat(suffix) :
-                                (Operator === divide) ? newValue = parseFloat(prefix) / parseFloat(suffix) :
-                                    (Operator === modulus) ? newValue = parseFloat(prefix) / parseFloat(suffix) :
-                                        alert("Cannot find the operator for calculating!");
-                    return newValue;
-                }
-
-                Array.splice(i - 1, 3, newValue());
-            }
-        }
     }
 
     const Calculate = (Arr) => {
@@ -89,5 +90,4 @@ const forConvert = (e, initValue, setter, updateArr, setFontSize) => {
 }
 
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export { addValue, allClear, forConvert }
